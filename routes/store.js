@@ -30,6 +30,7 @@ router.post("/", async (req, res) => {
 
 //PUT
 router.put("/:id", async (req, res) => {
+  console.log(req.body);
   var response = await stores.update(
     { _id: req.params.id },
     {
