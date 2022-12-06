@@ -7,6 +7,7 @@ dbConection();
 // Routes
 const usersRouter = require("./routes/user");
 const storeRouter = require("./routes/store");
+const templateRouter = require("./routes/template");
 //Confs
 const app = express();
 const router = express.Router();
@@ -20,6 +21,7 @@ app.use(express.static("public"));
 app.use("/api", router);
 app.use("/users", usersRouter);
 app.use("/stores", storeRouter);
+app.use("/templates", templateRouter);
 
 router.get("/", (req, res) => {
   res.send("Qualia Space te da la bienvenida");
