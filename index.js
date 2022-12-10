@@ -9,6 +9,8 @@ const usersRouter = require("./routes/user");
 const storeRouter = require("./routes/store");
 const templateRouter = require("./routes/template");
 const htmlTemplate = require("./routes/htmlTemplate");
+const products = require("./routes/products");
+const buysRouter = require("./routes/buys");
 //Confs
 const app = express();
 const router = express.Router();
@@ -24,6 +26,8 @@ app.use("/users", usersRouter);
 app.use("/stores", storeRouter);
 app.use("/templates", templateRouter);
 app.use("/htmltemplate", htmlTemplate);
+app.use("/products", products);
+app.use("/buys", buysRouter);
 
 router.get("/", (req, res) => {
   res.send("Qualia Space te da la bienvenida");

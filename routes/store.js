@@ -3,6 +3,11 @@ const express = require("express");
 const router = express.Router();
 const stores = require("../models/storesModel");
 
+//ALL STORES
+router.get("/allstores", async (req, res) => {
+  res.send(await stores.find({}));
+});
+
 //ALL
 router.get("/userId/:userId", async (req, res) => {
   res.send(await stores.find({ userId: req.params.userId }));
